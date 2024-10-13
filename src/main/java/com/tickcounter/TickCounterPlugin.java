@@ -71,6 +71,7 @@ public class TickCounterPlugin extends Plugin
 		int delta = 0;
 		switch (p.getAnimation())
 		{
+			// 2 tick weapon animations
 			case 7617: // rune knife
 			case 8194: // dragon knife
 			case 8291: // dragon knife spec
@@ -85,10 +86,14 @@ public class TickCounterPlugin extends Plugin
 					delta = 2;
 				}
 				break;
+
+			// 3 tick weapon animations
 			case 2323: // rpg
 			case 7618: // chin
 				delta = 3;
 				break;
+
+			// Bow animations
 			case 426: // bow shoot
 				if (weapon == 20997) // twisted bow
 					delta = 5;
@@ -98,6 +103,8 @@ public class TickCounterPlugin extends Plugin
 				else // shortbow
 					delta = 3;
 				break;
+
+			// 4 tick weapon animations
 			case 376: // dds poke
 			case 377: // dds slash
 			case 422: // punch
@@ -114,7 +121,6 @@ public class TickCounterPlugin extends Plugin
 					delta = 5;
 					break;
 				}
-
 			case 1062: // dds spec
 			case 1067: // claw stab
 			case 1074: // msb spec
@@ -138,6 +144,12 @@ public class TickCounterPlugin extends Plugin
 			case 8289: // dhl slash
 			case 8290: // dhl crush
 			case 4503: // inquisitor's mace crush
+			case 1132: // Saradomin Sword Special Attack
+			case 1133: // Saradomin's Blessed Sword Special Attack
+			case 11275: // voidwaker spec
+				delta = 4;
+				break;
+
 			case 1711: // zamorakian spear
 				if (config.showZamorakianSpear())
 				{
@@ -149,6 +161,8 @@ public class TickCounterPlugin extends Plugin
 					delta = 0;
 					break;
 				}
+
+			// 5 tick weapon animations
 			case 393: // staff bash
 				if (weapon == 13652)
 				{ // claw scratch
@@ -174,8 +188,14 @@ public class TickCounterPlugin extends Plugin
 			case 7552: // generic crossbow
 			case 1979: // barrage spell cast
 			case 8056: // scythe swing
+			case 9168: // Zaryte Crossbow
+			case 9493: // Tumuken's Shadow
+			case 9471: // Osmumten's Fang Stab
+			case 11222: // Osmumten's Fang Spec
 				delta = 5;
 				break;
+
+			// 6 tick weapon animations
 			case 401:
 				if (weapon == 13576) // dwh bop
 					delta = 6;
@@ -198,11 +218,6 @@ public class TickCounterPlugin extends Plugin
 				else // Godswords
 					delta = 6;
 				break;
-			case 1132: // Saradomin Sword Special Attack
-			case 1133: // Saradomin's Blessed Sword Special Attack
-			case 11275: // Voidwaker Special Attack
-				delta = 4;
-				break;
 			case 7511: // dinh's attack
 			case 7516: // maul attack
 			case 7555: // ballista attack
@@ -213,6 +228,8 @@ public class TickCounterPlugin extends Plugin
 			case 7644: // ags spec
 				delta = 6;
 				break;
+
+			// 7 tick weapon animations
 			case 428: // chally swipe
 			case 440: // chally jab
 			case 1203: // chally spec
@@ -221,18 +238,6 @@ public class TickCounterPlugin extends Plugin
 				else
 					delta = 7;
 				break;
-			case 9471: // Osmumten's Fang Stab
-				delta = 5;
-				break;
-			case 11222: // Osmumten's Fang Spec
-				delta = 5;
-				break;
-			case 9493: // Tumuken's Shadow
-				// Weapon ID - 27275
-				delta = 5;
-			case 9168: // Zaryte Crossbow
-				// Weapon ID - 26374
-				delta = 5;
 			case -1:
 				blowpiping.remove(p);
 				break;
